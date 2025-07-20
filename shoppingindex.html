@@ -351,7 +351,7 @@
             margin:5px 12px;
         }
     </style>
-    <script type="text/javascript"> </script>
+    <script type="text/javascript" src="js/common.js"></script>
 </head>
 <body>
     <!-- 顶部区域 start-->
@@ -682,23 +682,8 @@
           <!-- 底部区域end -->
           
     <script type="text/javascript">
-        // 菜单折叠功能
-        function toggleMenu(category) {
-            category.classList.toggle('collapsed');
-        }
-        
-        // 初始化菜单状态（默认折叠）
-        function initMenuState() {
-            const categories = document.querySelectorAll('.menu-category');
-            categories.forEach(category => {
-                category.classList.add('collapsed');
-            });
-        }
-        
-        // 页面加载完成后初始化菜单和轮播
+        // 页面加载完成后初始化轮播
         document.addEventListener('DOMContentLoaded', function() {
-            initMenuState();
-            
             // 启动自动轮播
             startAutoPlay();
             

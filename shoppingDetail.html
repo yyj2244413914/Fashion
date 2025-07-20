@@ -7,6 +7,7 @@
     <script type="text/javascript" src="js/hotAdvise.js"></script>
     <link href="css/shopshow.css" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="js/goodsOperator.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
     <style type="text/css">
         *{
             margin:0;padding:0;
@@ -710,9 +711,6 @@
             console.log('页面加载完成');
             initMagnifier();
             
-            // 初始化菜单状态（默认折叠）
-            initMenuState();
-            
             // 检查菜单元素是否存在
             const menuControls = document.querySelector('.menu-controls');
             console.log('菜单控制按钮:', menuControls);
@@ -826,36 +824,7 @@
             magnifierView.style.display = 'none';
         }
 
-        // 菜单折叠功能
-        function toggleMenu(category) {
-            category.classList.toggle('collapsed');
-        }
-        
-        // 全部展开菜单
-        function expandAllMenus() {
-            const categories = document.querySelectorAll('.menu-category');
-            categories.forEach(category => {
-                category.classList.remove('collapsed');
-            });
-        }
-        
-        // 全部折叠菜单
-        function collapseAllMenus() {
-            const categories = document.querySelectorAll('.menu-category');
-            categories.forEach(category => {
-                category.classList.add('collapsed');
-            });
-        }
-        
-        // 初始化菜单状态
-        function initMenuState() {
-            const categories = document.querySelectorAll('.menu-category');
-            console.log('找到菜单分类数量:', categories.length);
-            categories.forEach(category => {
-                category.classList.add('collapsed');
-                console.log('已折叠分类:', category.querySelector('.title').textContent);
-            });
-        }
+        // 菜单功能已移至 common.js
 
         // 原有的图片切换功能
         function changeGoodsImage(imgElement) {
