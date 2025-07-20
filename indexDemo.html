@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>漫步时尚广场首页</title>
+    <style type="text/css">
+        *{
+            margin:0;padding:0;
+        }
+        body{
+            font-size:12px;
+            font-family:microsoft yahei;
+        }
+        .clear{
+            clear:both;
+        }
+        .top_bg{
+            width:100%;
+            height:28px;
+            background-color:antiquewhite;
+            line-height:28px;
+        }
+        .top_content{
+            width:1200px;
+            margin:0 auto;
+        }
+        .floatl{
+            float:left;
+        }
+        .floatr{
+            float:right;
+        }
+        .xl{
+            display:inline-block;
+        }
+        .orange{
+            color:#f60;
+            font-weight:700;
+        }
+        .margin45{
+            margin-top:4px;
+            margin-right:5px;
+        }
+        .logo{
+            width:1200px;
+            margin:5px auto;
+        }
+        .nav_bg{
+            width:100%;
+            height:40px;
+            background-color:red;
+        }
+        ul,li{
+            list-style:none;
+        }
+        .nav_content{
+            width:1200px;
+            height:40px;
+            line-height:40px;
+            margin:0 auto;
+        }
+        .nav{
+            width:100%;
+            float:left;
+            margin-left:200px;
+        }
+        .nav li{
+            font-size:16px;
+            font-weight:700;
+            color:#fff;
+            float:left;
+            width:80px;
+            text-align:center;
+            margin-right:15px;
+        }
+        .main{
+            width:100%;
+        }
+        a.white{
+            color:#fff;
+            text-decoration:none;
+        }
+        a.white:hover{
+            color:#ff0;
+            text-decoration:none;
+        }
+        .nav_active{
+            height:40px;
+            background-color:#b12121;
+        }
+        .footer{
+            width:100%;
+            height:300px;
+            background-color:rgb(242, 239, 239);
+        }
+        .foot_pic li{
+            float:left;
+            width:210px;
+            text-align:center;
+        }
+        .foot_pic{
+            width:1200px;
+            margin:0 auto;
+        }
+        .foot_title{
+            background-color:#6a6665;
+            width:100%;
+            height:40px;
+            padding-top:8px;
+        }
+        .foot_list>li{
+            float:left;
+            width:170px;
+        }
+        .foot_list{
+            width:1100px;
+            margin:0 auto;
+            padding-top:20px;
+        }
+        .foot_list li ul{
+            padding-left:10px;
+        }
+        .line1{
+            background:url(images/line1.jpg) no-repeat;
+            width:20px;
+            height:100px;
+            display:inline-block;
+        }
+        .red_p{
+            width:35px;
+            height:31px;
+            display:block;
+        }
+        .foot_line{
+            border-bottom: 1px solid #111 ;
+            margin-top: 10px;
+            font-size:14px;
+        }
+        .font16{
+            font-size:16px;
+            font-weight:700;
+        }
+    </style>
+    <script type="text/javascript" src="js/hotAdvise.js"></script>
+    <link href="css/shopshow.css" rel="stylesheet" type="text/css">
+    <style>
+        .pic1{
+            width:1200px;
+            margin:5px auto;
+        }
+        .pic_title1{
+            width:1200px;
+            background-color: #f9a51e;
+            margin:5px auto;
+            color:white;
+            font-size: 16px;
+            line-height: 40px;
+            text-indent: 20px;
+        }
+        .pic2{
+            width:1200px;
+            margin:0 auto;
+        }
+        .pic2 dl{
+            float:left;
+            margin:10px 5px;
+        }
+        .pic2 dl img{
+            border:1px solid #ccc;
+            padding:4px;
+        }
+        .pic2 dl dd{
+            float:left;
+        }
+        .price{
+            color:red;font-size: 15px;
+            font-weight: 700;float:left;
+        }
+         .font12{
+            font-size: 12px;color:#6a6665;
+            float:right;
+        }
+        .pic3{
+            float:left;
+            padding-left:240px;
+        }
+        .pic_title2{
+            width:1200px;
+            background-color: rgb(19, 158, 19);
+            margin:5px 242px 5px;
+            color:white;
+            font-size: 16px;
+            line-height: 40px;
+            text-indent: 20px;
+            float:left; 
+        }
+        .pic4{
+           float:left;display: flex;
+        }
+        .pic4_left dl{ 
+            width:500px;
+            float:left;
+            padding-left: 250px;
+        }
+        .pic4_right {
+            float:left;
+            width:800px;
+            height:290px;
+            margin-left: -110px;
+        }
+        .pic4_right dl{
+            float:right;
+            margin:0 10px;
+        }
+        .pic4_active1{
+            background-color: #ede9e8;
+            width:370px;
+            height:35px;
+            line-height: 15px;
+            text-align: center;
+        }
+        .pic4_active2{
+            background-color: #ede9e8;
+            width:180px;
+            height:35px;
+            line-height: 15px;
+            text-align: center;
+        }
+        .font1{
+            font-size: 13px;
+            color:black;
+        }
+        .font2{
+            font-size: 12px;
+            color:#6a6665;
+        }
+        .pic_title3{
+            width:1200px;
+            background-color: #e56b08;
+            margin:0 242px 5px;
+            color:white;
+            font-size: 16px;
+            line-height: 40px;
+            text-indent: 20px;
+            float:left;
+        }
+        .pic5{
+            float:left;
+            padding-left:245px;
+        }
+        .pic6{
+            width:1100px;
+            padding-left: 340px;
+        }
+        .pic6 dl{
+            float:left;
+            margin:10px;
+        }
+        .pic6_active{
+            background-color: #ede9e8;
+            width:240px;
+            font-size: 16px;
+            height:35px;
+            line-height: 35px;
+            text-align: center;
+        }
+        a.red{
+            color:black;
+            text-decoration: none;
+        }
+        a.red:hover{
+            color:#b12121;
+            text-decoration: none;
+        }
+        .font12_2{
+            font-size: 12px;color:#6a6665;
+            float:left;
+            margin:3px 0;
+        }
+        .pic6 dl{
+            border:1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <!-- 顶部区域 start-->
+     <div class="top_bg">
+        <div class="top_content">
+            <div class="floatl">
+                    <img src="images/star.jpg"><span>收藏 | 欢迎使用!</span>
+                    <a href="#" class="orange">[请登录]</a>
+                    <a href="#" class="orange">[免费注册]</a>
+            </div>
+            <div class="floatr">
+                客户服务<img src="images/arrow.gif">&nbsp;网站导航<img src="images/arrow.gif">
+                <div class="xl">
+                    <div class="droparrow">
+                        <span class="margin45">
+                            <img src="images/shoppingcart.png">
+                        </span>
+                            我的购物车<span class="orange">0</span>件<img src="images/arrow.gif">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+     </div>
+    <!-- 顶部区域end -->
+
+    <!-- logo区域 start-->
+       <div class="logo">
+        <a href="#"><img src="images/logo.jpg"></a>
+        <img src="images/banner.jpg">
+       </div>
+        <!-- logo区域end -->
+
+        <!-- 菜单导航start -->
+
+         <div class="nav_bg">
+            <div class="nav_content">
+                <ul class="nav">
+                    <li class="nav_active"><a href="shoppingindex.html" class="white" >首页</a></li>
+                    <li><a href="shop/shoppingindex.html" class="white">购物</a></li>
+                    <li><a href="#" class="white">影城</a></li>
+                    <li>美食</li>
+                    <li>团购</li>
+                    <li>限时抢购</li>
+                    <li>促销打折</li>
+                </ul>
+            </div>
+         </div>
+        <!-- 菜单导航end -->
+
+         <!-- 内容区start -->
+          <div class="main">
+            <div class="pic1">
+                <img src="images/ad1.jpg">
+            </div>
+            <h1 class="pic_title1">最新上架</h1>
+            <div class="pic2">
+                <dl>
+                    <img src="images/yifu1.jpg">
+                    <dt><span class="price">￥198.00</span><span class="font12">324人购买</span></dt>
+                    <dd>冬季新款牛仔外套加厚<br>连帽毛领加绒牛仔棉衣</dd>
+                </dl>
+                <dl>
+                    <img src="images/yifu2.jpg">
+                    <dt><span class="price">￥69.00</span><span class="font12">534人购买</span></dt>
+                    <dd>2015夏新款韩版 透气舒适<br>简约半截袖T恤衫</dd>
+                </dl>
+                <dl>
+                    <img src="images/yifu3.jpg">
+                    <dt><span class="price">￥169.00</span><span class="font12">643人购买</span></dt>
+                    <dd>韩版甜美气质亮片热气球<br>字母中长款圆领短袖T恤</dd>
+                </dl>
+                <dl>
+                    <img src="images/yifu4.jpg">
+                    <dt><span class="price">￥210.00</span><span class="font12">678人购买</span></dt>
+                    <dd>2015款秋新款甜美学院立<br>领中袖套头格子衬衫娃娃衫</dd>
+                </dl>
+                <dl>
+                    <img src="images/yifu5.jpg">
+                    <dt><span class="price">￥70.00</span><span class="font12">567人购买</span></dt>
+                    <dd>2015款秋新款甜美学院立<br>领中袖套头格子衬衫娃娃衫</dd>
+                </dl>
+                <dl>
+                    <img src="images/yifu6.jpg">
+                    <dt><span class="price">￥146.00</span><span class="font12">4567人购买</span></dt>
+                    <dd>大码女装胖mm2015夏装新款韩<br>版显瘦露肩镂空连衣裙</dd>
+                </dl>
+                <dl>
+                    <img src="images/yifu7.jpg">
+                    <dt><span class="price">￥69.00</span><span class="font12">1345人购买</span></dt>
+                    <dd>v领雪纺背心女夏外穿双层<br>吊带打底衫百搭显瘦无袖上衣</dd>
+                </dl>
+            </div>
+            <div class="pic3">
+                <img src="images/pic1.jpg">
+                <img src="images/pic2.jpg">
+                <img src="images/pic3.jpg">
+                <img src="images/pic4.jpg">
+            </div>
+            <h1 class="pic_title2">影院热映</h1>
+            <div class="pic4">
+                <div class="pic4_left">
+                    <dl>
+                        <img src="images/ad2.jpg" width="370px" height="250px">
+                        <div class="pic4_active1">
+                            <p class="font1">《火星救援》首款中文预告</p>
+                            <p class="font2">马特达蒙火星求生</p>
+                        </div>
+                    </dl>
+                </div>
+                <div class="pic4_right">
+                    <dl>
+                        <img src="images/mo4.jpg">
+                        <div class="pic4_active2">
+                            <p class="font1">《刺蝶》火力热播</p>
+                            <p class="font2">侯勇为破案做出新指示</p>
+                        </div>
+                    </dl>
+                    <dl>
+                        <img src="images/mo5.jpg">
+                        <div class="pic4_active2">
+                            <p class="font1">《终结者5》震撼混剪</p>
+                            <p class="font2">呼吁“硬汉精神”的归来</p>
+                        </div>
+                    </dl>
+                    <dl>
+                        <img src="images/mo6.jpg">
+                        <div class="pic4_active2">
+                            <p class="font1">《别有动机》曝秦岚特辑</p>
+                            <p class="font2">秦岚爱到极致奋不顾身</p>
+                        </div>
+                    </dl>
+                    <dl>
+                        <img src="images/mo7.jpg">
+                        <div class="pic4_active2">
+                            <p class="font1">《小黄人大眼萌》行“顶…”</p>
+                            <p class="font2">乔汉姆配 音女魔头老公</p>
+                        </div>
+                    </dl>
+                    <dl>
+                        <img src="images/mo8.jpg">
+                        <div class="pic4_active2">
+                            <p class="font1">《三城记》“铭心之恋”特辑</p>
+                            <p class="font2">加吻戏秦海璐感动落泪</p>
+                        </div>
+                    </dl>
+                    <dl>
+                        <img src="images/mo9.jpg">
+                        <div class="pic4_active2">
+                            <p class="font1">《新娘大作战》彩蛋曝光</p>
+                            <p class="font2">今日公映神秘客串曝光</p>
+                        </div>
+                    </dl>
+                    <dl>
+                        <img src="images/mo10.jpg">
+                        <div class="pic4_active2">
+                            <p class="font1">《既然青春留不住》七夕…</p>
+                            <p class="font2">霸道塘主张翰虐单身狗</p>
+                        </div>
+                    </dl>
+                    <dl>
+                        <img src="images/mo11.jpg">
+                        <div class="pic4_active2">
+                            <dt><p class="font1">《春江英雄之秀才遇到兵</p></dt>
+                            <dd><p class="font2">沙溢被胖妞抢亲</p></dd>
+                        </div>
+                    </dl>
+                </div>
+            </div>
+            <div>
+                <h1 class="pic_title3">今日美食</h1>
+                <div class="pic5">
+                    <img src="images/pic5.jpg">
+                    <img src="images/pic6.jpg">
+                    <img src="images/pic7.jpg">
+                    <img src="images/pic8.jpg">
+                </div>
+                
+                <div class="pic6">
+                    <dl>
+                        <img src="images/ms2.jpg">
+                        <a href="#" class="red"><p class="pic6_active">土大力休闲餐厅</p></a>
+                        <dd><span class="price">￥85</span><span class="font12_2">起</span>
+                            <span class="font12">324人购买</span></dd>
+                    </dl>
+                    <dl>
+                        <img src="images/ms1.jpg">
+                        <a href="#" class="red"><p class="pic6_active">粥全粥到</p></a>
+                        <dd><span class="price">￥88</span><span class="font12_2">起</span>
+                            <span class="font12">324人购买</span></dd>
+                    </dl>
+                    <dl>
+                        <img src="images/ms3.jpg">
+                        <a href="#" class="red"><p class="pic6_active">味为先豆腐脑</p></a>
+                        <dd><span class="price">￥9</span><span class="font12_2">起</span>
+                            <span class="font12">324人购买</span></dd>
+                    </dl>
+                    <dl>
+                        <img src="images/ms4.jpg">
+                        <a href="#" class="red"><p class="pic6_active">望湘园</p></a>
+                        <dd><span class="price">￥90</span><span class="font12_2">起</span>
+                            <span class="font12">324人购买</span></dd>
+                    </dl>
+                    <dl>
+                        <img src="images/ms5.jpg">
+                        <a href="#" class="red"><p class="pic6_active">彤德莱</p></a>
+                        <dd><span class="price">￥89</span><span class="font12_2">起</span>
+                            <span class="font12">324人购买</span></dd>
+                    </dl>
+                    <dl>
+                        <img src="images/ms6.jpg">
+                        <a href="#" class="red"><p class="pic6_active">赛百味</p></a>
+                        <dd><span class="price">￥19.9</span><span class="font12_2">起</span>
+                            <span class="font12">324人购买</span></dd>
+                    </dl>
+                    <dl>
+                        <img src="images/ms7.jpg">
+                        <a href="#" class="red"><p class="pic6_active">大渔铁板烧（心海广场店）</p></a>
+                        <dd><span class="price">￥180</span><span class="font12_2">起</span>
+                            <span class="font12">324人购买</span></dd>
+                    </dl>
+                    <dl>
+                        <img src="images/ms8.jpg">
+                        <a href="#" class="red"><p class="pic6_active">川香麻辣香锅</p></a>
+                        <dd><span class="price">￥38</span><span class="font12_2">起</span>
+                            <span class="font12">324人购买</span></dd>
+                    </dl>
+                </div>
+            </div>
+          </div>
+        <!-- 内容区end -->
+
+        <div class="clear"></div>
+         <!-- 底部区域start -->
+        <div class="footer">
+            <div class="clear"></div>
+            <div class="foot_line"></div>
+            <p align="center">Copyright 2015-2020 Q-Walking-Fashion E&S 漫步时尚广场（西交）版权所有
+                <br>中国陕西西安碑林区8888号 咨询热线12345678912</p>
+            <p align="center"><img src="images/foot_pic.jpg"></p>
+        </div>
+          <!-- 底部区域end -->
+</body>
+</html>

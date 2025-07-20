@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>漫步时尚广场购物最新上架</title>
+    <script type="text/javascript" src="js/hotAdvise.js"></script>
+    <style type="text/css">
+        *{
+            margin:0;padding:0;
+        }
+        body{
+            font-size:12px;
+            font-family:microsoft yahei;
+        }
+        .clear{
+            clear:both;
+        }
+        .top_bg{
+            width:100%;
+            height:28px;
+            background-color:antiquewhite;
+            line-height:28px;
+        }
+        .top_content{
+            width:1200px;
+            margin:0 auto;
+        }
+        .floatl{
+            float:left;
+        }
+        .floatr{
+            float:right;
+        }
+        .xl{
+            display:inline-block;
+        }
+        .orange{
+            color:#f60;
+            font-weight:700;
+        }
+        .margin45{
+            margin-top:4px;
+            margin-right:5px;
+        }
+        .logo{
+            width:1200px;
+            margin:5px auto;
+        }
+        .nav_bg{
+            width:100%;
+            height:40px;
+            background-color:red;
+        }
+        ul,li{
+            list-style:none;
+        }
+        .nav_content{
+            width:1200px;
+            height:40px;
+            line-height:40px;
+            margin:0 auto;
+        }
+        .nav{
+            width:100%;
+            float:left;
+            margin-left:200px;
+        }
+        .nav li{
+            font-size:16px;
+            font-weight:700;
+            color:#fff;
+            float:left;
+            width:80px;
+            text-align:center;
+            margin-right:15px;
+        }
+        .main{width:1200px;margin:10px auto;height:600px;}
+        .menu{ width:220px;float:left;border:1px solid #e5e4e1;}
+        .menu li{width:220px;float:left;border:1px solid #e5e4e1;height:33px;
+            line-height:33px;background-color: #fafafa;font-size:14px;text-align:left;}
+        .menu li .title{width:100%;height:33px;background-color:#e5e5e4e1;
+            font-size:15px;text-align:left;line-height:33px;display:inline-block;}
+        .middle{width:690px;float:left;}
+        .pic_title{background-color:#e0961f;font-size:20px;line-height: 40px;
+            color:#fff;margin:0 10px 10px;float:left;width:680px;text-indent: 20px;}
+        .pic_list{float:left;}
+        .pic_list dl{float:left;width:152px;margin:0 10px 10px;}
+        .price{color:red;font-size: 15px;font-weight: 700;float:left;}
+        .font12{font-size: 12px;color:#6a6665;float:right;}
+        .pic_list dl dd{float:left;}
+        .pic_list dl img{border:1px solid #ccc;padding:5px;margin-bottom: 10px;}
+        .pic_list2{float:left;}
+        .pic_list2 li{width:163px;float:left;margin:5px 4px;border:1px solid #ccc;}
+        .pic_list2 dl{float:left;width:152px;margin:0 10px 10px;}
+        .pic_list2 dl dd{float:left;}
+        .pic_list2 dl img{border:1px solid #ccc;padding:5px;margin-bottom:10px;}
+        .red_dot{background:url(images/red_dot.gif)no-repeat;width:8px;height:8px;display:inline-block;margin:0 10px;}
+        .right_arrow{background:url(images/arrow_r.jpg)no-repeat;
+            width:20px;height:20px;float:right;}
+        .right_nav{width:280px;border:ipx solid #eee;float:right;}
+        .notice_title{background-color: #ccc;line-height: 40px;font-size: 16px;text-align: left;text-indent: 20px;}
+        .pic_list3 li{width:83px;float:left;margin:5px;}
+        .pic_list3 li img{border:1px solid #ccc;}
+        .price2{color:red;text-align: center;font-weight: 700;}
+        .black{color:black;text-decoration:none;}
+        a.white{
+            color:#fff;
+            text-decoration:none;
+        }
+        a.white:hover{
+            color:#ff0;
+            text-decoration:none;
+        }
+        .nav_active{
+            height:40px;
+            background-color:#b12121;
+        }
+        .footer{
+            width:100%;
+            height:300px;
+            background-color:rgb(242, 239, 239);
+        }
+        .foot_pic li{
+            float:left;
+            width:210px;
+            text-align:center;
+        }
+        .foot_pic{
+            width:1200px;
+            margin:0 auto;
+        }
+        .foot_title{
+            background-color:#6a6665;
+            width:100%;
+            height:40px;
+            padding-top:8px;
+        }
+        .foot_list>li{
+            float:left;
+            width:170px;
+        }
+        .foot_list{
+            width:1100px;
+            margin:0 auto;
+            padding-top:20px;
+        }
+        .foot_list li ul{
+            padding-left:10px;
+        }
+        .line1{
+            background:url(images/line1.jpg) no-repeat;
+            width:20px;
+            height:100px;
+            display:inline-block;
+        }
+        .red_p{
+            width:35px;
+            height:31px;
+            display:block;
+        }
+        .foot_line{
+            border-bottom: 1px solid #111 ;
+            margin-top: 10px;
+            font-size:14px;
+        }
+        .font16{
+            font-size:16px;
+            font-weight:700;
+        }
+        
+        /* 菜单折叠功能样式 */
+        .menu .menu-category {
+            cursor: pointer;
+            position: relative;
+            border: 1px solid #e5e4e1;
+            margin-bottom: 1px;
+        }
+        
+        .menu .menu-category .title {
+            cursor: pointer;
+            user-select: none;
+            position: relative;
+            width: 100%;
+            height: 33px;
+            background-color: #e5e5e5;
+            font-size: 15px;
+            text-align: left;
+            line-height: 33px;
+            display: block;
+            padding-left: 20px;
+            box-sizing: border-box;
+        }
+        
+        .menu .menu-category .title::after {
+            content: '▼';
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 12px;
+            transition: transform 0.3s ease;
+            color: #666;
+        }
+        
+        .menu .menu-category.collapsed .title::after {
+            transform: translateY(-50%) rotate(-90deg);
+        }
+        
+        .menu .menu-subitems {
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            max-height: 200px;
+        }
+        
+        .menu .menu-category.collapsed .menu-subitems {
+            max-height: 0;
+        }
+        
+        .menu .menu-category .menu-subitems li {
+            border-top: 1px solid #f0f0f0;
+            width: 220px;
+            float: left;
+            border: 1px solid #e5e4e1;
+            height: 33px;
+            line-height: 33px;
+            background-color: #fafafa;
+            font-size: 14px;
+            text-align: left;
+        }
+        
+        .menu .menu-category:hover {
+            background-color: #f5f5f5;
+        }
+        
+        .menu .menu-category .title:hover {
+            background-color: #e8e8e8;
+        }
+        
+        /* 确保控制按钮显示 */
+        .menu .menu-controls {
+            display: block !important;
+            padding: 10px !important;
+            background: #f8f8f8 !important;
+            border-bottom: 1px solid #e5e4e1 !important;
+            font-size: 18px !important;
+            font-weight: bold !important;
+            color: #333 !important;
+            text-align: center !important;
+        }
+        
+    </style>
+    <script type="text/javascript">
+        var images=["dress1.jpg","dress2.jpg","dress3.jpg","dress4.jpg"];
+        var content=["xxxxxxx","xxxxxxx","xxxxxxx","xxxxxxx"];
+        for(var i in images){
+            var liInfo="<li><img src='images/shopshow/"+images[i]+"'/><p>"+content[i]+"</p></li>";
+            var pic_active=document.getElementById("pic_active");
+            console.log(pic_active);
+         }
+    </script>
+</head>
+<body>
+    <!-- 顶部区域 start-->
+     <div class="top_bg">
+        <div class="top_content">
+            <div class="floatl">
+                    <img src="images/star.jpg"><span>收藏 | 欢迎使用!</span>
+                    <a href="#" class="orange">[请登录]</a>
+                    <a href="#" class="orange">[免费注册]</a>
+            </div>
+            <div class="floatr">
+                客户服务<img src="images/arrow.gif">&nbsp;网站导航<img src="images/arrow.gif">
+                <div class="xl">
+                    <div class="droparrow">
+                        <span class="margin45">
+                            <img src="images/shoppingcart.png">
+                        </span>
+                            我的购物车<span class="orange">0</span>件<img src="images/arrow.gif">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+     </div>
+    <!-- 顶部区域end -->
+
+    <!-- logo区域 start-->
+       <div class="logo">
+        <a href="shoppingindex.html"><img src="images/logo.jpg"></a>
+        <img src="images/banner.jpg">
+       </div>
+        <!-- logo区域end -->
+
+        <!-- 菜单导航start -->
+
+         <div class="nav_bg">
+            <div class="nav_content">
+                <ul class="nav">
+                    <li ><a href="shoppingindex.html" class="white" >首页</a></li>
+                    <li class="nav_active"><a href="shoppingshow.html" class="white">最新上架</a></li>
+                    <li><a href="#" class="white">品牌活动</a></li>
+                    <li><a href="#" class="white">原厂直供</a></li>
+                    <li><a href="#" class="white">团购</a></li>
+                    <li><a href="#" class="white">限时抢购</a></li>
+                    <li><a href="#" class="white">促销打折</a></li>
+                </ul>
+            </div>
+         </div>
+        <!-- 菜单导航end -->
+
+         <!-- 内容区start -->
+          <div class="main">
+            <div class="menu">
+                <div class="menu-controls">菜单</div>
+                <div class="menu-category" onclick="toggleMenu(this)">
+                    <div class="title">女装</div>
+                    <div class="menu-subitems">
+                        <li>
+                            <span class="red_dot"></span>
+                            <a href="#" class="black">上衣</a>
+                            <span class="right_arrow"></span>
+                        </li>
+                        <li>
+                            <span class="red_dot"></span>
+                            <a href="#" class="black">下装</a>
+                            <span class="right_arrow"></span>
+                        </li>
+                        <li>
+                            <span class="red_dot"></span>
+                            <a href="#" class="black">连衣裙</a>
+                            <span class="right_arrow"></span>
+                        </li>
+                        <li>
+                            <span class="red_dot"></span>
+                            <a href="#" class="black">包包</a>
+                            <span class="right_arrow"></span>
+                        </li>
+                    </div>
+                </div>
+                
+                <div class="menu-category" onclick="toggleMenu(this)">
+                    <div class="title">男装</div>
+                    <div class="menu-subitems">
+                        <li>
+                            <span class="red_dot"></span>
+                            <a href="#" class="black">T恤</a>
+                            <span class="right_arrow"></span>
+                        </li>
+                        <li>
+                            <span class="red_dot"></span>
+                            <a href="#" class="black">西装</a>
+                            <span class="right_arrow"></span>
+                        </li>
+                        <li>
+                            <span class="red_dot"></span>
+                            <a href="#" class="black">衬衫</a>
+                            <span class="right_arrow"></span>
+                        </li>
+                        <li>
+                            <span class="red_dot"></span>
+                            <a href="#" class="black">西裤</a>
+                            <span class="right_arrow"></span>
+                        </li>
+                    </div>
+                </div>
+                
+                <div class="menu-category" onclick="toggleMenu(this)">
+                    <div class="title">童装</div>
+                    <div class="menu-subitems">
+                        <li>
+                            <span class="red_dot"></span>
+                            <a href="#" class="black">帽子</a>
+                            <span class="right_arrow"></span>
+                        </li>
+                        <li>
+                            <span class="red_dot"></span>
+                            <a href="#" class="black">马甲</a>
+                            <span class="right_arrow"></span>
+                        </li>
+                    </div>
+                </div>
+                
+                <div class="menu-category" onclick="toggleMenu(this)">
+                    <div class="title">运动装</div>
+                    <div class="menu-subitems">
+                        <li>
+                            <span class="red_dot"></span>
+                            <a href="#" class="black">冲锋衣</a>
+                            <span class="right_arrow"></span>
+                        </li>
+                        <li>
+                            <span class="red_dot"></span>
+                            <a href="#" class="black">运动鞋</a>
+                            <span class="right_arrow"></span>
+                        </li>
+                        <li>
+                            <span class="red_dot"></span>
+                            <a href="#" class="black">运动裤</a>
+                            <span class="right_arrow"></span>
+                        </li>
+                    </div>
+                </div>
+            </div>
+            <div class="middle">
+                <h1 class="pic_title">最新上架</h1>
+                <div class="pic_list">
+                    <dl>
+                        <a href="shoppingDetail.html">
+                        <div><img src="images/shopshow/yifu1.jpg"></div>
+                        <dt><span class="price">￥198.00</span><span class="font12">324人购买</span></dt>
+                        <dd>冬季新款毛领加厚加绒牛仔棉衣</dd>
+                        </a>
+                        
+                    </dl>
+                    <dl>
+                        <div><img src="images/shopshow/yifu2.jpg"></div>
+                        <dt><span class="price">￥69.00</span><span class="font12">563人购买</span></dt>
+                        <dd>2015夏天新款透气舒爽简约半截袖T恤衫</dd>
+                    </dl>
+                    <dl>
+                        <div><img src="images/shopshow/yifu3.jpg"></div>
+                        <dt><span class="price">￥160.00</span><span class="font12">24人购买</span></dt>
+                        <dd>樱桃红夏季清爽短袖</dd>
+                    </dl>
+                    <dl>
+                        <div><img src="images/shopshow/yifu4.jpg"></div>
+                        <dt><span class="price">￥210.00</span><span class="font12">32人购买</span></dt>
+                        <dd>白色印花夏季舒爽气质短袖上搭</dd>
+                    </dl>
+                    <dl>
+                        <div><img src="images/shopshow/yifu5.jpg"></div>
+                        <dt><span class="price">￥70.00</span><span class="font12">4人购买</span></dt>
+                        <dd>甜美中袖格子衬衫娃娃衫</dd>
+                    </dl>
+                    <dl>
+                        <div><img src="images/shopshow/yifu6.jpg"></div>
+                        <dt><span class="price">￥146.00</span><span class="font12">2人购买</span></dt>
+                        <dd>显瘦露肩镂空连衣裙</dd>
+                    </dl>
+                    <dl>
+                        <div><img src="images/shopshow/yifu7.jpg"></div>
+                        <dt><span class="price">￥69.00</span><span class="font12">3241人购买</span></dt>
+                        <dd>吊带打底衫显瘦无袖上衣</dd>
+                    </dl>
+                    <dl>
+                        <div><img src="images/shopshow/yifu8.jpg"></div>
+                        <dt><span class="price">￥239.00</span><span class="font12">240871人购买</span></dt>
+                        <dd>高瘦连衣裙A字裙秋季</dd>
+                    </dl>
+                </div>
+                <h1 class="pic_title">品牌活动</h1>
+                <div class="pic_list2" id="shopBottomList">
+                    <dl>
+                        <div><img src="images/shopshow/dress1.jpg"></div>
+                        <dd>xxxxxxx</dd>
+                    </dl>
+                    <dl>
+                        <div><img src="images/shopshow/dress2.jpg"></div>
+                        <dd>xxxxxxx</dd>
+                    </dl>
+                    <dl>
+                        <div><img src="images/shopshow/dress3.jpg"></div>
+                        <dd>xxxxxxx</dd>
+                    </dl>
+                    <dl>
+                        <div><img src="images/shopshow/dress4.jpg"></div>
+                        <dd>xxxxxxx</dd>
+                    </dl>
+                    <dl>
+                        <div><img src="images/shopshow/dress5.jpg"></div>
+                        <dd>xxxxxxx</dd>
+                    </dl>
+                    <dl>
+                        <div><img src="images/shopshow/dress6.jpg"></div>
+                        <dd>xxxxxxx</dd>
+                    </dl>
+                    <dl>
+                        <div><img src="images/shopshow/dress7.jpg"></div>
+                        <dd>xxxxxxx</dd>
+                    </dl>
+                    <dl>
+                        <div><img src="images/shopshow/dress8.jpg"></div>
+                        <dd>xxxxxxx</dd>
+                    </dl> 
+                </div>
+            </div>
+            <div class="right_nav">
+                <h1 class="notice_title">热门推荐</h1><ul class="pic_list3"><li><img src="images/shopshow/s2.jpg" width="80" height="80"/><p class="price2">￥56</p></li><li><img src=images/shopshow/yifu2.jpg width="80" height="80"/><p class="price2">￥56</p></li><li><img src=images/shopshow/s5.jpg width="80" height="80"/><p class="price2">￥56</p></li><li><img src=images/shopshow/s4.jpg width="80" height="80"/><p class="price2">￥56</p></li><li><img src=images/shopshow/s6.jpg width="80" height="80"/><p class="price2">￥56</p></li><li><img src=images/shopshow/s9.jpg width="80" height="80"/><p class="price2">￥56</p></li><li><img src=images/shopshow/yifu4.jpg width="80" height="80"/><p class="price2">￥56</p></li><li><img src=images/shopshow/s3.jpg width="80" height="80"/><p class="price2">￥56</p></li><li><img src=images/shopshow/yifu3.jpg width="80" height="80"/><p class="price2">￥56</p></li></ul>
+            </div>
+          </div>
+        <!-- 内容区end -->
+
+        <div class="clear"></div>
+         <!-- 底部区域start -->
+        <div class="footer">
+            <div class="foot_title">
+                <ul class="foot_pic">
+                    <li><img src="shop/images/gray1.jpg"></li>
+                    <li><img src="shop/images/gray2.jpg"></li>
+                    <li><img src="shop/images/gray3.jpg"></li>
+                    <li><img src="shop/images/gray4.jpg"></li>
+                    <li><img src="shop/images/gray5.jpg"></li>
+                </ul>
+            </div>
+            <ul class="foot_list">
+                <li>
+                    <div class="floatl">
+                        <p class="red_p" style="background: url(shop/images/red1.jpg) no-repeat;"></p>
+                        <p class="line1"></p>
+                    </div>
+                    <ul class="float1">
+                        <li class="font16">新手指导</li>
+                        <li>用户注册</li>
+                        <li>电话下单</li>
+                        <li>服务流程</li>
+                        <li>服务保障</li>
+                        <li>服务协议</li>=
+                    </ul>
+                </li>
+                <li>
+                    <div class="floatl">
+                        <p class="red_p" ><img src="shop/images/red2.jpg"></p>
+                        <p class="line1"></p>
+                    </div>
+                    <ul class="floatl">
+                        <li class="font16">支付方式</li>
+                        <li>货到付款</li>
+                        <li>商城卡支付</li>
+                        <li>支付宝、网银支付</li>
+                        <li>优惠券抵用</li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="floatl">
+                        <p class="red_p" style="background: url(shop/images/red3.jpg) no-repeat;"></p>
+                        <p class="line1"></p>
+                    </div>
+                    <ul class="floatl">
+                        <li class="font16">配送方式</li>
+                        <li>闪电发货</li>
+                        <li>满百包邮</li>
+                        <li>配送范围及时间</li>
+                        <li>商品验收及签收</li>
+                        <li>服务协议</li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="floatl">
+                        <p class="red_p" ><img src="shop/images/red4.jpg"></p>
+                        <p class="line1"></p>
+                    </div>
+                    <ul class="floatl">
+                        <li class="font16">售后服务</li>
+                        <li>退换货协议</li>
+                        <li>关于发票</li>
+                        <li>退换货流程</li>
+                        <li>退换货运费</li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="floatl">
+                        <p class="red_p" style="background: url(shop/images/red5.jpg) no-repeat;"></p>
+                        <p class="line1"></p>
+                    </div>
+                    <ul class="floatl">
+                        <li class="font16">关于账号</li>
+                        <li>修改个人信息</li>
+                        <li>修改密码</li>
+                        <li>找回密码</li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="floatl">
+                        <p class="red_p" style="background: url(shop/images/red6.jpg) no-repeat;"></p>
+                        <p class="line1"></p>
+                    </div>
+                    <ul class="floatl">
+                        <li class="font16">优惠活动</li>
+                        <li>竞拍须知</li>
+                        <li>抢购须知</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="clear"></div>
+            <div class="foot_line"></div>
+            <p align="center">Copyright 2015-2020 Q-Walking-Fashion E&S 漫步时尚广场（西交）版权所有
+                <br>中国陕西西安碑林区8888号 咨询热线12345678912</p>
+            <p align="center"><img src="images/foot_pic.jpg"></p>
+        </div>
+          <!-- 底部区域end -->
+          
+    <script type="text/javascript">
+        // 菜单折叠功能
+        function toggleMenu(category) {
+            category.classList.toggle('collapsed');
+        }
+        
+        // 初始化菜单状态（默认折叠）
+        function initMenuState() {
+            const categories = document.querySelectorAll('.menu-category');
+            categories.forEach(category => {
+                category.classList.add('collapsed');
+            });
+        }
+        
+        // 页面加载完成后初始化菜单
+        document.addEventListener('DOMContentLoaded', function() {
+            initMenuState();
+        });
+    </script>
+</body>
+</html>

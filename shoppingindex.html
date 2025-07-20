@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>漫步时尚广场购物首页</title>
+    <link href="css/shopshow.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/pictureSlide.js"></script>
+    <style type="text/css">
+        *{
+            margin:0;padding:0;
+        }
+        body{
+            font-size:12px;
+            font-family:microsoft yahei;
+        }
+        .clear{
+            clear:both;
+        }
+        .top_bg{
+            width:100%;
+            height:28px;
+            background-color:antiquewhite;
+            line-height:28px;
+        }
+        .top_content{
+            width:1200px;
+            margin:0 auto;
+        }
+        .floatl{
+            float:left;
+        }
+        .floatr{
+            float:right;
+        }
+        .xl{
+            display:inline-block;
+        }
+        .orange{
+            color:#f60;
+            font-weight:700;
+        }
+        .margin45{
+            margin-top:4px;
+            margin-right:5px;
+        }
+        .logo{
+            width:1200px;
+            margin:5px auto;
+        }
+        .nav_bg{
+            width:100%;
+            height:40px;
+            background-color:red;
+        }
+        ul,li{
+            list-style:none;
+        }
+        .nav_content{
+            width:1200px;
+            height:40px;
+            line-height:40px;
+            margin:0 auto;
+        }
+        .nav{
+            width:100%;
+            float:left;
+            margin-left:200px;
+        }
+        .nav li{
+            font-size:16px;
+            font-weight:700;
+            color:#fff;
+            float:left;
+            width:80px;
+            text-align:center;
+            margin-right:15px;
+        }
+        .main{width:1200px;margin:10px auto;height:600px;}
+        .menu{ width:220px;float:left;border:1px solid #e5e4e1;}
+        .menu li{width:220px;float:left;border:1px solid #e5e4e1;height:33px;
+            line-height:33px;background-color: #fafafa;font-size:14px;text-align:left;}
+        .menu li .title{width:100%;height:33px;background-color:#e5e5e4e1;
+            font-size:15px;text-align:left;line-height:33px;display:inline-block;}
+        .red_dot{background:url(images/red_dot.gif)no-repeat;width:8px;height:8px;display:inline-block;margin:0 10px;}
+        .right_arrow{background:url(images/arrow_r.jpg)no-repeat;
+            width:20px;height:20px;float:right;}
+        a.white{
+            color:#fff;
+            text-decoration:none;
+        }
+        a.white:hover{
+            color:#ff0;
+            text-decoration:none;
+        }
+        .nav_active{
+            height:40px;
+            background-color:#b12121;
+        }
+        .footer{
+            width:100%;
+            height:300px;
+            background-color:rgb(242, 239, 239);
+        }
+        .foot_pic li{
+            float:left;
+            width:210px;
+            text-align:center;
+        }
+        .foot_pic{
+            width:1200px;
+            margin:0 auto;
+        }
+        .foot_title{
+            background-color:#6a6665;
+            width:100%;
+            height:40px;
+            padding-top:8px;
+        }
+        .foot_list>li{
+            float:left;
+            width:170px;
+        }
+        .foot_list{
+            width:1100px;
+            margin:0 auto;
+            padding-top:20px;
+        }
+        .foot_list li ul{
+            padding-left:10px;
+        }
+        .line1{
+            background:url(images/line1.jpg) no-repeat;
+            width:20px;
+            height:100px;
+            display:inline-block;
+        }
+        .red_p{
+            width:35px;
+            height:31px;
+            display:block;
+        }
+        .foot_line{
+            border-bottom: 1px solid #111 ;
+            margin-top: 10px;
+            font-size:14px;
+        }
+        .font16{
+            font-size:16px;
+            font-weight:700;
+        }
+
+        /* 菜单折叠功能样式 */
+        .menu .menu-category {
+            cursor: pointer;
+            position: relative;
+            border: 1px solid #e5e4e1;
+            margin-bottom: 1px;
+        }
+        
+        .menu .menu-category .title {
+            cursor: pointer;
+            user-select: none;
+            position: relative;
+            width: 100%;
+            height: 33px;
+            background-color: #e5e5e5;
+            font-size: 15px;
+            text-align: left;
+            line-height: 33px;
+            display: block;
+            padding-left: 20px;
+            box-sizing: border-box;
+        }
+        
+        .menu .menu-category .title::after {
+            content: '▼';
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 12px;
+            transition: transform 0.3s ease;
+            color: #666;
+        }
+        
+        .menu .menu-category.collapsed .title::after {
+            transform: translateY(-50%) rotate(-90deg);
+        }
+        
+        .menu .menu-subitems {
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            max-height: 200px;
+        }
+        
+        .menu .menu-category.collapsed .menu-subitems {
+            max-height: 0;
+        }
+        
+        .menu .menu-category .menu-subitems li {
+            border-top: 1px solid #f0f0f0;
+            width: 220px;
+            float: left;
+            border: 1px solid #e5e4e1;
+            height: 33px;
+            line-height: 33px;
+            background-color: #fafafa;
+            font-size: 14px;
+            text-align: left;
+        }
+        
+        .menu .menu-category:hover {
+            background-color: #f5f5f5;
+        }
+        
+        .menu .menu-category .title:hover {
+            background-color: #e8e8e8;
+        }
+        
+        /* 确保控制按钮显示 */
+        .menu .menu-controls {
+            display: block !important;
+            padding: 10px !important;
+            background: #f8f8f8 !important;
+            border-bottom: 1px solid #e5e4e1 !important;
+            font-size: 18px !important;
+            font-weight: bold !important;
+            color: #333 !important;
+            text-align: center !important;
+        }
+        
+    </style>
+    <style>
+        .home_pic{
+            width:690px;
+            height:350px;
+            border:3px solid #ccc;
+            float:left;
+        }
+        .focusBox{
+            width:120px;
+            position:absolute;
+            bottom:10px;
+            left:50%;
+            margin-left:-60px;
+            list-style: none;
+            z-index: 100;
+        }
+        .focusBox li{
+            width:15px;
+            float:left;
+            background-color: #999;
+            height:15px;
+            border-radius: 50%;
+            cursor:pointer;
+            margin: 0 5px;
+            border: 2px solid #fff;
+            box-shadow: 0 0 5px rgba(0,0,0,0.3);
+        }
+        .focusBox li.cur{
+            background-color: #f66;
+            border-color: #f66;
+            box-shadow: 0 0 8px rgba(255,102,102,0.6);
+        }
+        
+        /* 轮播图片过渡效果 */
+        .home_pic img {
+            transition: opacity 0.5s ease;
+        }
+        
+        /* 轮播容器样式优化 */
+        .home_pic {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* 焦点指示器样式优化 */
+        .focusBox {
+            z-index: 10;
+        }
+        
+        .focusBox li {
+            transition: all 0.3s ease;
+        }
+        
+        .focusBox li:hover {
+            background-color: #f66;
+            border-color: #f66;
+            transform: scale(1.2);
+        }
+        .home_notice{
+            width:240px;height:216px;
+            border:1px solid #f2f2f2;
+            float:left;
+        }
+        .home_notice_title{
+            background-color: #ccc;
+            width:240px;height:30px;
+            font-size: 16px;font-weight: 700;
+            text-indent: 20px;
+            padding:5px 0;
+            line-height: 30px;
+        }
+        .home_notice li a{
+            text-decoration: none;
+            color:black;
+        }
+        .home_notice li{
+            width:238px;height:25px;line-height: 25px;
+        }
+        .gray_dot{
+            background:url(images/gray_dot.gif) no-repeat;width:8px;height:8px;
+            display:inline-block;
+        }
+        .home_pic_list{
+            width:240px;height:125px;
+            float:left;
+        }
+        .home_pic_list li{
+            width:76px;
+            float:left;
+            margin:2px;
+        }
+        .home_bottom{
+            width:935px;height:252px;
+            float:left;
+        }
+        .home_bottom li{
+            width:185px;
+            float:left;
+            border:1px #ccc solid;
+            margin:43px 0;
+        }
+        .home_bottom li img{
+            width:65px;
+            float:left;
+            margin:5px;
+        }
+        .home_bottom  li .hot_type{
+            width:100px;height:65px;
+            float:left;
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 22px;
+            text-align: left;
+            margin:15px 5px 10px;
+        }
+        .home_bottom .hot_list{
+            line-height: 30px;
+            margin:5px 12px;
+        }
+    </style>
+    <script type="text/javascript"> </script>
+</head>
+<body>
+    <!-- 顶部区域 start-->
+     <div class="top_bg">
+        <div class="top_content">
+            <div class="floatl">
+                    <img src="images/star.jpg"><span>收藏 | 欢迎使用!</span>
+                    <a href="#" class="orange">[请登录]</a>
+                    <a href="#" class="orange">[免费注册]</a>
+            </div>
+            <div class="floatr">
+                客户服务<img src="images/arrow.gif">&nbsp;网站导航<img src="images/arrow.gif">
+                <div class="xl">
+                    <div class="droparrow">
+                        <span class="margin45">
+                            <img src="images/shoppingcart.png">
+                        </span>
+                            我的购物车<span class="orange">0</span>件<img src="images/arrow.gif">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+     </div>
+    <!-- 顶部区域end -->
+
+    <!-- logo区域 start-->
+       <div class="logo">
+        <a href="shoppingindex.html"><img src="images/logo.jpg"></a>
+        <img src="images/banner.jpg">
+       </div>
+        <!-- logo区域end -->
+
+        <!-- 菜单导航start -->
+
+         <div class="nav_bg">
+            <div class="nav_content">
+                <ul class="nav">
+                    <li class="nav_active"><a href="shoppingindex.html" class="white" >首页</a></li>
+                    <li><a href="shoppingshow.html" class="white">最新上架</a></li>
+                    <li><a href="#" class="white">品牌活动</a></li>
+                    <li><a href="#" class="white">原厂直供</a></li>
+                    <li><a href="#" class="white">团购</a></li>
+                    <li><a href="#" class="white">限时抢购</a></li>
+                    <li><a href="#" class="white">促销打折</a></li>
+                </ul>
+            </div>
+         </div>
+        <!-- 菜单导航end -->
+
+         <!-- 内容区start -->
+        <div class="main">
+            <div class="menu">
+                <div class="menu-controls">菜单</div>
+                <div class="menu-category" onclick="toggleMenu(this)">
+                    <div class="title">女装</div>
+                    <div class="menu-subitems">
+                        <li>
+                            <span class="red_dot"></span>
+                            <a href="#" class="black">上衣</a>
+                            <span class="right_arrow"></span>
+                        </li>
+                        <li>
+                            <span class="red_dot"></span>
+                            <a href="#" class="black">下装</a>
+                            <span class="right_arrow"></span>
+                        </li>
+                        <li>
+                            <span class="red_dot"></span>
+                            <a href="#" class="black">连衣裙</a>
+                            <span class="right_arrow"></span>
+                        </li>
+                        <li>
+                            <span class="red_dot"></span>
+                            <a href="#" class="black">包包</a>
+                            <span class="right_arrow"></span>
+                        </li>
+                    </div>
+                </div>
+                
+                <div class="menu-category" onclick="toggleMenu(this)">
+                    <div class="title">男装</div>
+                    <div class="menu-subitems">
+                        <li>
+                            <span class="red_dot"></span>
+                            <a href="#" class="black">T恤</a>
+                            <span class="right_arrow"></span>
+                        </li>
+                        <li>
+                            <span class="red_dot"></span>
+                            <a href="#" class="black">西装</a>
+                            <span class="right_arrow"></span>
+                        </li>
+                        <li>
+                            <span class="red_dot"></span>
+                            <a href="#" class="black">衬衫</a>
+                            <span class="right_arrow"></span>
+                        </li>
+                        <li>
+                            <span class="red_dot"></span>
+                            <a href="#" class="black">西裤</a>
+                            <span class="right_arrow"></span>
+                        </li>
+                    </div>
+                </div>
+                
+                <div class="menu-category" onclick="toggleMenu(this)">
+                    <div class="title">童装</div>
+                    <div class="menu-subitems">
+                        <li>
+                            <span class="red_dot"></span>
+                            <a href="#" class="black">帽子</a>
+                            <span class="right_arrow"></span>
+                        </li>
+                        <li>
+                            <span class="red_dot"></span>
+                            <a href="#" class="black">马甲</a>
+                            <span class="right_arrow"></span>
+                        </li>
+                    </div>
+                </div>
+                
+                <div class="menu-category" onclick="toggleMenu(this)">
+                    <div class="title">运动装</div>
+                    <div class="menu-subitems">
+                        <li>
+                            <span class="red_dot"></span>
+                            <a href="#" class="black">冲锋衣</a>
+                            <span class="right_arrow"></span>
+                        </li>
+                        <li>
+                            <span class="red_dot"></span>
+                            <a href="#" class="black">运动鞋</a>
+                            <span class="right_arrow"></span>
+                        </li>
+                        <li>
+                            <span class="red_dot"></span>
+                            <a href="#" class="black">运动裤</a>
+                            <span class="right_arrow"></span>
+                        </li>
+                    </div>
+                </div>
+            </div>
+            <div class="home_middle">
+                <div class="home_pic">
+                    <img src="images/index/pic1.jpg" width="690px" height="350px" id="focusImg">
+                    <ul class="focusBox">
+                        <li  onclick="showPic(1)"></li>
+                        <li  onclick="showPic(2)"></li>
+                        <li  onclick="showPic(3)"></li>
+                    </ul>
+                </div>
+                <div class="home_notice">
+                    <h1 class="home_notice_title">公告</h1>
+                    <ul>
+                        <li><a href="#"><span class="gray_dot"></span>今天上午讲购物商城首页</a></li>
+                        <li><a href="#"><span class="gray_dot"></span>今天下午讲123</a></li>
+                        <li><a href="#"><span class="gray_dot"></span>345678</a></li>
+                        <li><a href="#"><span class="gray_dot"></span>wertt</a></li>
+                        <li><a href="#"><span class="gray_dot"></span>wefrthbrt</a></li>
+                        <li><a href="#"><span class="gray_dot"></span>sjdbchdb</a></li>
+                        <li><a href="#"><span class="gray_dot"></span>wiehfuergfhcdf</a></li>
+                    </ul>
+                </div>
+                <div class="home_pic_list">
+                    <ul>
+                        <li><img src="images/index/link1.gif"></li>
+                        <li><img src="images/index/link2.gif"></li>
+                        <li><img src="images/index/link3.gif"></li>
+                        <li><img src="images/index/link4.gif"></li>
+                        <li><img src="images/index/link5.jpg"></li>
+                        <li><img src="images/index/link6.jpg"></li>
+                        <li><img src="images/index/link7.jpg"></li>
+                        <li><img src="images/index/link8.jpg"></li>
+                        <li><img src="images/index/link9.jpg"></li>
+                    </ul>
+                </div>
+                <div class="home_bottom">
+                    <ul>
+                        <li>
+                            <img src="images/index/pro1.jpg" width="65px" height="65px">
+                            <span class="hot_type">热门品类<br>护肤彩妆启示</span>
+                            <div class="hot_list">
+                                <p>洗护套餐&nbsp;&nbsp;&nbsp;&nbsp;面部精华&nbsp;&nbsp;&nbsp;&nbsp;香水</p>
+                                <p>粉底液&nbsp;&nbsp;&nbsp;&nbsp;面霜&nbsp;&nbsp;&nbsp;&nbsp;洁面乳</p>
+                                <p>美容工具&nbsp;&nbsp;&nbsp;&nbsp;复方精油&nbsp;&nbsp;&nbsp;&nbsp;洗发水</p>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="images/index/pro2.jpg" width="65px" height="65px">
+                            <span class="hot_type">热门品类<br>护肤彩妆启示</span>
+                            <div class="hot_list">
+                                <p>洗护套餐&nbsp;&nbsp;&nbsp;&nbsp;面部精华&nbsp;&nbsp;&nbsp;&nbsp;香水</p>
+                                <p>粉底液&nbsp;&nbsp;&nbsp;&nbsp;面霜&nbsp;&nbsp;&nbsp;&nbsp;洁面乳</p>
+                                <p>美容工具&nbsp;&nbsp;&nbsp;&nbsp;复方精油&nbsp;&nbsp;&nbsp;&nbsp;洗发水</p>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="images/index/pro3.jpg" width="65px" height="65px">
+                            <span class="hot_type">热门品类<br>护肤彩妆启示</span>
+                            <div class="hot_list">
+                                <p>洗护套餐&nbsp;&nbsp;&nbsp;&nbsp;面部精华&nbsp;&nbsp;&nbsp;&nbsp;香水</p>
+                                <p>粉底液&nbsp;&nbsp;&nbsp;&nbsp;面霜&nbsp;&nbsp;&nbsp;&nbsp;洁面乳</p>
+                                <p>美容工具&nbsp;&nbsp;&nbsp;&nbsp;复方精油&nbsp;&nbsp;&nbsp;&nbsp;洗发水</p>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="images/index/pro4.jpg" width="65px" height="65px">
+                            <span class="hot_type">热门品类<br>护肤彩妆启示</span>
+                            <div class="hot_list">
+                                <p>洗护套餐&nbsp;&nbsp;&nbsp;&nbsp;面部精华&nbsp;&nbsp;&nbsp;&nbsp;香水</p>
+                                <p>粉底液&nbsp;&nbsp;&nbsp;&nbsp;面霜&nbsp;&nbsp;&nbsp;&nbsp;洁面乳</p>
+                                <p>美容工具&nbsp;&nbsp;&nbsp;&nbsp;复方精油&nbsp;&nbsp;&nbsp;&nbsp;洗发水</p>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="images/index/pro5.jpg" width="65px" height="65px">
+                            <span class="hot_type">热门品类<br>护肤彩妆启示</span>
+                            <div class="hot_list">
+                                <p>洗护套餐&nbsp;&nbsp;&nbsp;&nbsp;面部精华&nbsp;&nbsp;&nbsp;&nbsp;香水</p>
+                                <p>粉底液&nbsp;&nbsp;&nbsp;&nbsp;面霜&nbsp;&nbsp;&nbsp;&nbsp;洁面乳</p>
+                                <p>美容工具&nbsp;&nbsp;&nbsp;&nbsp;复方精油&nbsp;&nbsp;&nbsp;&nbsp;洗发水</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- 内容区end -->
+
+        <div class="clear"></div>
+         <!-- 底部区域start -->
+        <div class="footer">
+            <div class="foot_title">
+                <ul class="foot_pic">
+                    <li><img src="shop/images/gray1.jpg"></li>
+                    <li><img src="shop/images/gray2.jpg"></li>
+                    <li><img src="shop/images/gray3.jpg"></li>
+                    <li><img src="shop/images/gray4.jpg"></li>
+                    <li><img src="shop/images/gray5.jpg"></li>
+                </ul>
+            </div>
+            <ul class="foot_list">
+                <li>
+                    <div class="floatl">
+                        <p class="red_p" style="background: url(shop/images/red1.jpg) no-repeat;"></p>
+                        <p class="line1"></p>
+                    </div>
+                    <ul class="float1">
+                        <li class="font16">新手指导</li>
+                        <li>用户注册</li>
+                        <li>电话下单</li>
+                        <li>服务流程</li>
+                        <li>服务保障</li>
+                        <li>服务协议</li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="floatl">
+                        <p class="red_p" ><img src="shop/images/red2.jpg"></p>
+                        <p class="line1"></p>
+                    </div>
+                    <ul class="floatl">
+                        <li class="font16">支付方式</li>
+                        <li>货到付款</li>
+                        <li>商城卡支付</li>
+                        <li>支付宝、网银支付</li>
+                        <li>优惠券抵用</li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="floatl">
+                        <p class="red_p" style="background: url(shop/images/red3.jpg) no-repeat;"></p>
+                        <p class="line1"></p>
+                    </div>
+                    <ul class="floatl">
+                        <li class="font16">配送方式</li>
+                        <li>闪电发货</li>
+                        <li>满百包邮</li>
+                        <li>配送范围及时间</li>
+                        <li>商品验收及签收</li>
+                        <li>服务协议</li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="floatl">
+                        <p class="red_p" ><img src="shop/images/red4.jpg"></p>
+                        <p class="line1"></p>
+                    </div>
+                    <ul class="floatl">
+                        <li class="font16">售后服务</li>
+                        <li>退换货协议</li>
+                        <li>关于发票</li>
+                        <li>退换货流程</li>
+                        <li>退换货运费</li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="floatl">
+                        <p class="red_p" style="background: url(shop/images/red5.jpg) no-repeat;"></p>
+                        <p class="line1"></p>
+                    </div>
+                    <ul class="floatl">
+                        <li class="font16">关于账号</li>
+                        <li>修改个人信息</li>
+                        <li>修改密码</li>
+                        <li>找回密码</li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="floatl">
+                        <p class="red_p" style="background: url(shop/images/red6.jpg) no-repeat;"></p>
+                        <p class="line1"></p>
+                    </div>
+                    <ul class="floatl">
+                        <li class="font16">优惠活动</li>
+                        <li>竞拍须知</li>
+                        <li>抢购须知</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="clear"></div>
+            <div class="foot_line"></div>
+            <p align="center">Copyright 2015-2020 Q-Walking-Fashion E&S 漫步时尚广场（西交）版权所有
+                <br>中国陕西西安碑林区8888号 咨询热线12345678912</p>
+            <p align="center"><img src="images/foot_pic.jpg"></p>
+        </div>
+          <!-- 底部区域end -->
+          
+    <script type="text/javascript">
+        // 菜单折叠功能
+        function toggleMenu(category) {
+            category.classList.toggle('collapsed');
+        }
+        
+        // 初始化菜单状态（默认折叠）
+        function initMenuState() {
+            const categories = document.querySelectorAll('.menu-category');
+            categories.forEach(category => {
+                category.classList.add('collapsed');
+            });
+        }
+        
+        // 页面加载完成后初始化菜单和轮播
+        document.addEventListener('DOMContentLoaded', function() {
+            initMenuState();
+            
+            // 启动自动轮播
+            startAutoPlay();
+            
+            // 为轮播容器添加鼠标事件
+            var homePic = document.querySelector('.home_pic');
+            if (homePic) {
+                homePic.addEventListener('mouseenter', pauseAutoPlay);
+                homePic.addEventListener('mouseleave', resumeAutoPlay);
+            }
+        });
+        
+        // 图片轮播相关变量
+        var currentIndex = 1;
+        var totalImages = 3;
+        var autoPlayTimer = null;
+        var isAutoPlaying = true;
+        
+        // 图片切换功能
+        function showPic(index) {
+            var focusImg = document.getElementById("focusImg");
+            var focusBox = document.querySelectorAll(".focusBox li");
+            
+            // 设置图片
+            focusImg.src = "images/index/pic" + index + ".jpg";
+            
+            // 设置焦点样式
+            for(var i = 0; i < focusBox.length; i++) {
+                focusBox[i].className = "";
+            }
+            focusBox[index-1].className = "cur";
+            
+            // 更新当前索引
+            currentIndex = index;
+        }
+        
+        // 下一张图片
+        function nextPic() {
+            var nextIndex = currentIndex + 1;
+            if (nextIndex > totalImages) {
+                nextIndex = 1;
+            }
+            showPic(nextIndex);
+        }
+        
+        // 自动轮播
+        function startAutoPlay() {
+            if (autoPlayTimer) {
+                clearInterval(autoPlayTimer);
+            }
+            autoPlayTimer = setInterval(function() {
+                nextPic();
+            }, 1000); // 每3秒切换一次
+        }
+        
+        // 停止自动轮播
+        function stopAutoPlay() {
+            if (autoPlayTimer) {
+                clearInterval(autoPlayTimer);
+                autoPlayTimer = null;
+            }
+        }
+        
+        // 鼠标悬停时停止轮播
+        function pauseAutoPlay() {
+            stopAutoPlay();
+        }
+        
+        // 鼠标离开时恢复轮播
+        function resumeAutoPlay() {
+            if (isAutoPlaying) {
+                startAutoPlay();
+            }
+        }
+    </script>
+</body>
+</html>
